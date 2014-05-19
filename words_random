@@ -1,0 +1,11 @@
+#a program that prints a list of words in random order
+#The program should print all the words and not repeat any
+
+import random
+
+words_used = ["Python", "Compiler", "Ruby", "Javascript", "Linux"]
+
+while words_used != []:
+    words_random = random.choice(words_used)
+    print(words_random)
+    words_used.pop(words_used.index(words_random)) #removing the word located at the index of words_used.index(words_random)
