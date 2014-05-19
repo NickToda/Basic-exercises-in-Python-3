@@ -1,0 +1,53 @@
+#cs161 at PSU
+#Temperature converter program
+
+userTemp = input("Enter a temperature with units C, F, K, or R (ex: 75.1F) to see the temperature \nconverted: ")
+
+numberStr = userTemp[0:-1] # needs a comment
+unitStr = userTemp[-1] #looks only at the last unit in userTemp i.e. the temperature type C, F, K etc. 
+
+if unitStr == "C":
+    kelvinOfInput = float(numberStr) + 273.15 #kelvinOfinput == kelvin version of Celc. using the conversion formula
+    print(str(round(kelvinOfInput,1)) + "K")    #prints the result as a string (in order to add the unit type) then uses the round() function to round it within one decimal point then adds the unit type "K" 
+    f = (kelvinOfInput - 273.15) * 9 / 5 + 32 #takes the result of kelvinOfinput and plugs it into the formula for fehrenheit
+    print(str(round(f,1)) + "F") #print the calculated and rounded value of Faren. (as a string) concatinated with "F" string
+    r = kelvinOfInput * 9 / 5 #calculate the Ran. equivalent from the kelvin value we calculated in the previous lines
+    print(str(round(r,1)) + "R") #print aforementioned Rankine value
+    
+if unitStr == "F":
+    kelvinOfInput = (float(numberStr) - 32) * 5 / 9 + 273.15
+    print(str(round(kelvinOfInput,1)) + "K")
+    c = kelvinOfInput - 273.15
+    print(str(round(c,1)) + "C")
+    r = kelvinOfInput * 9 / 5
+    print(str(round(r,1)) + "R")
+    
+if unitStr == "R":
+    kelvinOfinput = (float(numberStr) * 5 / 9) #finding the kelvin version of Rankine using the formula 
+    print(str(round(kelvinOfinput,1)) + "K")
+    c = kelvinOfinput - 273.15
+    print(str(round(c,1)) +"C")
+    f = (kelvinOfinput - 273.15) * 9 /5 + 32
+    print(str(round(f,1)) + "F")
+
+if unitStr == "K":
+    c = (float(numberStr) - 273.15)
+    print(str(round(c,1)) + "C")
+    f = (float(numberStr) - 273.15) * 9 / 5 + 32
+    print(str(round(f,1)) + "F")
+    r = (float(numberStr)) * 9 / 5
+    print(str(round(r,1)) + "R")
+
+
+
+input("\nPress the enter key to exit.")
+
+#conversion formulas 
+#K = C + 273.15
+#K = (F - 32) * 5 / 9 + 273.15
+#K = R * 5 / 9
+    
+#For converting kelvin into the other temp types
+#C = K - 273.15
+#F = (K - 273.15) * 9 / 5 + 32
+#R = K * 9 / 5
