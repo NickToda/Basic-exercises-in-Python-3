@@ -1,0 +1,9 @@
+#program that counts for the user. 
+start_count = int(input("Enter a number to start: "))
+end_count = int(input("Enter a number to end: "))
+interval_count = int(input("Enter a number to count by: "))
+
+for i in range(start_count, end_count, interval_count):
+    print(i)
+
+input("\n\nPress the enter key to exit")
