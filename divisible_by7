@@ -1,0 +1,14 @@
+#Find the sum of all the numbers between 1 and an input that are divisible by 7
+
+#input a number n
+#initialize some counter to 0
+#loop over the numbers from 1 to n
+#if the current number is divisible by 7 add it to the counter
+#print the counter
+
+n = int(input("Enter a number to see the sum of all numbers divisible by 7: "))
+counter = 0
+for i in range(1, n + 1):
+    if i % 7 == 0:
+        counter += i
+print(counter)
