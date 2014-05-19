@@ -1,0 +1,12 @@
+#Granted or denied
+#demonstrates if statements and an else clause
+
+print("Welcome to Ultra Max Security Inc.")
+password = input("Enter your password: ")
+
+if password == "secret":
+    print("Access Granted")
+else:
+    print("Access Denied. Goodbye")
+
+input("\n\nPress the enter key to exit.")
